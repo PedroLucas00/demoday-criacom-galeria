@@ -3,13 +3,13 @@ import { v4 as uuidv4 } from "uuid";
 import { db as prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request) {
+export async function GET() {
     try {
         const images = await prisma.images.findMany();
 
         return NextResponse.json({ images }, { status: 200 });
     } catch (error) {
-        return new Response(JSON.stringify({ error: 'Internal error' }), {
+        return new Response(JSON.stringify({ message: 'Internal error', error: error }), {
             status: 500
         });
     }

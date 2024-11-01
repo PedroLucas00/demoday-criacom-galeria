@@ -1,11 +1,8 @@
 'use client'
 
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { LuChevronRight } from "react-icons/lu"
-import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 
 export default function Home() {
